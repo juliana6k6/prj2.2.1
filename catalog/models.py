@@ -23,7 +23,7 @@ class Product(models.Model):
     price = models.ImageField(verbose_name="цена за штуку")
     created_at = models.DateField(verbose_name="Дата создания", auto_now=True)
     updated_at = models.DateField(verbose_name="Дата последнего изменения", auto_now=True)
-    manufactured_at = models.DateField(verbose_name="Дата производства продукта", auto_now=True)
+    # manufactured_at = models.DateField(verbose_name="Дата производства продукта", auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, verbose_name="Категория",
                                  **NULLABLE)
 
