@@ -20,7 +20,7 @@ class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="наименование")
     description = models.TextField(verbose_name="Описание", **NULLABLE)
     image = models.ImageField(upload_to='images', verbose_name="изображение", **NULLABLE)
-    price = models.ImageField(verbose_name="цена за штуку")
+    price = models.PositiveIntegerField(verbose_name="цена за штуку")
     created_at = models.DateField(verbose_name="Дата создания", auto_now=True)
     updated_at = models.DateField(verbose_name="Дата последнего изменения", auto_now=True)
     # manufactured_at = models.DateField(verbose_name="Дата производства продукта", auto_now=True)
