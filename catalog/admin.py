@@ -2,7 +2,7 @@ from django.contrib import admin
 from catalog.models import Category, Product
 
 # Register your models here.
-# @admin.register(Имя_модели)
+# @admin.register(Имя_модели)python manage.py
 # class Имя_МоделиAdmin(admin.ModelAdmin):
 #     list_display = (список_полей_модели_для_отображения)
 #     list_filter = (список_полей_для_фильтрации)
@@ -18,6 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'category', 'description')
     list_filter = ('category',)
     search_fields = ('name', 'description')
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
