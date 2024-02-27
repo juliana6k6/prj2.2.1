@@ -43,16 +43,15 @@ class Command(BaseCommand):
                 Category(**category_item))
         # Создаем объекты в базе с помощью метода bulk_create()
         Category.objects.bulk_create(category_for_create)
-        print(Category.objects)
         # Обходим все значения продуктов из списка для получения информации об одном объекте
         for product_item in product_list:
             pk = product_item["category"]
-            category = Category.objects.filter(pk=pk)
+            category = Category.objects.filter(pk=pk)[0]
             price1 = product_item["price"]
             name1 = product_item["name"]
             product_for_create.append(
                 Product(name=name1,
                         price=price1,
-                        сategory=category))
+                        category=category))
         # Создаем объекты в базе с помощью метода bulk_create()
         Product.objects.bulk_create(product_for_create)
