@@ -1,0 +1,57 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Корм для попугаев",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Кошачий корм",
+      "description": ""
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Кеша",
+      "description": "",
+      "image": "",
+      "price": 3,
+      "created_at": "2024-02-24",
+      "updated_at": "2024-02-24",
+      "category": 5
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Жорик",
+      "description": "",
+      "image": "",
+      "price": 4,
+      "created_at": "2024-02-24",
+      "updated_at": "2024-02-24",
+      "category": 5
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Вискас",
+      "description": "",
+      "image": "",
+      "price": 5,
+      "created_at": "2024-02-24",
+      "updated_at": "2024-02-24",
+      "category": 6
+    }
+  }
+]
