@@ -1,6 +1,5 @@
 from django.urls import path
 from catalog.views import product_list
-from catalog.views import contacts
 from catalog.views import product
 from catalog.apps import CatalogConfig
 from django.conf.urls.static import static
