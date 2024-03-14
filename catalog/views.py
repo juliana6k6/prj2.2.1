@@ -1,7 +1,7 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from catalog.models import Product
-from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
+# from django.shortcuts import get_object_or_404
+from django.views.generic import ListView, DetailView
 
 # def home(request):
 #     return render(request, "catalog/product_list.html")
@@ -16,12 +16,14 @@ from django.views.generic import ListView
 #
 #     return render(request, "catalog/contacts.html")
 
+class ProductDetailView(DetailView):
+    model = Product
 
-def product(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    context = {'object': product}
-    # context = {'object': Product.objects.get(pk=pk)}
-    return render(request, "catalog/product.html", context)
+# def product(request, pk):
+#     product = get_object_or_404(Product, pk=pk)
+#     context = {'object': product}
+#     # context = {'object': Product.objects.get(pk=pk)}
+#     return render(request, "catalog/product.html", context)
 
 # def product_list(request):
 #     context = {"object_list": Product.objects.all()}
