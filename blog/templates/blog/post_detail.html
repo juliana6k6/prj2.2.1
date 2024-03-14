@@ -1,0 +1,18 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags1 %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
+                </div>
+                <img src="{{ object.preview | media_filter1 }}">
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"> Слаг: {{ object.slug }}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li> Создано: {{ object.created_at }}</li>
+                        <li> Текст: {{ object.body|slice:300 }}</li></ul>
+            </div></div>
+{% endblock %}

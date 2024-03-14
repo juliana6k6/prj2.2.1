@@ -1,0 +1,25 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-4">
+            {% for object in object_list %}
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">{{ object.title }}</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title"> Слаг: {{ object.slug }}</h1>
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li> Дата создания: {{ object.created_at }}</li>
+                        <li> Текст: {{ object.body|slice:300 }}</li></ul>
+                </div>
+                <a class="p-2 btn btn-outline-primary" href='{% url "blog:details" object.pk %}'>Подробнее </a>
+            </div>
+            {% endfor %}
+             <a class="p-2 btn btn-outline-primary" href='{% url "blog:create" %}'>Создать пост </a>
+        </div>
+
+   </div>
+</div>
+{% endblock %}
