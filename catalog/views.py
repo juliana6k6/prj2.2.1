@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from catalog.models import Product
 from django.shortcuts import get_object_or_404
+from django.views.generic import ListView
 
 # def home(request):
 #     return render(request, "catalog/product_list.html")
@@ -22,7 +23,11 @@ def product(request, pk):
     # context = {'object': Product.objects.get(pk=pk)}
     return render(request, "catalog/product.html", context)
 
-def product_list(request):
-    context = {"object_list": Product.objects.all()}
-    return render(request, "catalog/product_list.html", context)
+# def product_list(request):
+#     context = {"object_list": Product.objects.all()}
+#     return render(request, "catalog/product_list.html", context)
+
+class ProductListView(ListView):
+    model = Product
+    template_name = "catalog/product_list"
 
