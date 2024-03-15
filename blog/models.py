@@ -5,7 +5,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100, verbose_name="заголовок")
     slug = models.CharField(verbose_name="слаг", blank=True, null=True)
     body = models.TextField(verbose_name="содержимое")
-    preview = models.ImageField(upload_to='blog_images', verbose_name="изображение", blank=True, null=True)
+    preview = models.ImageField(upload_to='new_images', verbose_name="изображение", blank=True, null=True)
     created_at = models.DateField(verbose_name="Дата создания", auto_now=True)
     published = models.BooleanField(default=True, verbose_name="Опубликован")
     view_count = models.PositiveIntegerField(default=0, verbose_name="Счётчик просмотров")

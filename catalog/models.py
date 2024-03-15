@@ -35,3 +35,4 @@ class Product(models.Model):
         verbose_name_plural = "продукты"
 
 
+
