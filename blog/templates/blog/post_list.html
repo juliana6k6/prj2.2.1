@@ -14,7 +14,9 @@
                         <li> Дата создания: {{ object.created_at }}</li>
                         <li> Текст: {{ object.body|slice:300 }}</li></ul>
                 </div>
-                <a class="p-2 btn btn-outline-primary" href='{% url "blog:details" object.pk %}'>Подробнее </a>
+                <a class="p-2 btn btn-outline-primary" href='{% url "blog:details" object.pk %}'>Посмотреть </a>
+                <a class="p-2 btn btn-outline-primary" href='{% url "blog:update" object.pk %}'>Редактировать </a>
+                <a class="p-2 btn btn-outline-primary" href='{% url "blog:delete" object.pk %}'>Удалить </a>
             </div>
             {% endfor %}
              <a class="p-2 btn btn-outline-primary" href='{% url "blog:create" %}'>Создать пост </a>
