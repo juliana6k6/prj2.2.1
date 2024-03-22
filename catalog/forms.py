@@ -6,7 +6,7 @@ from catalog.models import Product, Version
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = ('__all__',)
+        fields = '__all__'
 
     def clean_name(self):
         cleaned_data = self.cleaned_data.get('name').lower()
@@ -30,5 +30,5 @@ class VersionForm(ModelForm):
 
     class Meta:
         model = Version
-        fields = ('__all__',)
+        fields = '__all__'
 
