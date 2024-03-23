@@ -1,4 +1,4 @@
-# from django.shortcuts import render
+from django.shortcuts import render
 from catalog.models import Product, Version
 # from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
@@ -10,14 +10,14 @@ from django.forms import inlineformset_factory
 #     return render(request, "catalog/product_list.html")
 
 
-# def contacts(request):
-#     if request.method == "POST":
-#         name = request.POST.get("name")
-#         phone = request.POST.get('phone')
-#         message = request.POST.get('message')
-#         print(f'{name} ({phone}) {message}')
-#
-#     return render(request, "catalog/contacts.html")
+def contacts(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+        print(f'{name} ({phone}) {message}')
+
+    return render(request, "catalog/contacts.html")
 
 class ProductDetailView(DetailView):
     model = Product
