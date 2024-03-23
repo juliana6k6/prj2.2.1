@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 # from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from catalog.forms import ProductForm, VersionForm
@@ -22,6 +22,14 @@ def contacts(request):
 class ProductDetailView(DetailView):
     model = Product
 
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        product = self.get_object()
+        context_data['versions'] = Version.objects.filter(product=product)
+        context_data['actual_version'] = Version.objects.filter(product=product).filter(is_actual=True).first()
+        return context_data
+
+
 # def product(request, pk):
 #     product = get_object_or_404(Product, pk=pk)
 #     context = {'object': product}
@@ -36,6 +44,23 @@ class ProductDetailView(DetailView):
 class ProductListView(ListView):
     model = Product
     template_name = "catalog/product_list"
+
+
+    # нужно редактировать, не работает
+    # def get_queryset(self):
+    #     queryset = super().get_queryset()
+    #     queryset = queryset.filter(category_id=self.kwargs.get('pk'))
+    #     return queryset
+    #
+    # def get_context_data(self, *args, **kwargs):
+    #     context_data = super().get_context_data(*args, **kwargs)
+    #     category_data = Category.objects.get(pk=self.kwargs.get('pk'))
+    #     context_data['category_pk'] = category_data.pk
+    #     context_data['title'] = f'{category_data.name}'
+    #     for product in context_data.get('object_list'):
+    #         product.version = product.version_set.filter(is_current=True).first()
+    #     return context_data
+
 
 
 class ProductCreateView(CreateView):
