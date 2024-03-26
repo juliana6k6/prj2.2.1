@@ -15,16 +15,19 @@
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         <li> Категория: {{ object.category }}</li>
                         <li> Описание: {{ object.description|slice:100 }}</li></ul>
-                        {% if object.versions.all %}
-                        {% for version in object.versions.all %}
-                            {% if version.is_actual %}
-                            <li> Активная версия: {{ version.version_title }}</li>
-                            <li> Активная версия: {{ version.version_number }}</li>
-                            {% endif %}
-                        {% endfor %}
-                        {% else %}
-                           <li> Нет активной версии </li>
-                        {% endif %}
+                        <li> Активная версия: {{ object.actual_version }}</li>
+
+<!--                        {% if object.versions.all %}-->
+<!--                        {% for version in object.versions.all %}-->
+<!--                            {% if version.is_actual %}-->
+<!--                            <li> Активная версия: {{ version.version_title }}</li>-->
+<!--                            <li> Активная версия: {{ version.version_number }}</li>-->
+<!--                            {% endif %}-->
+<!--                        {% endfor %}-->
+<!--                        {% else %}-->
+<!--                           <li> Нет активной версии </li>-->
+<!--                        {% endif %}-->
+<!--                    если не описывать get_context_data в ProductListView-->
 
 
                 </div>

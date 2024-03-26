@@ -14,7 +14,8 @@
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         <li> Категория: {{ object.category }}</li>
                         <li> Описание: {{ object.description|slice:100 }}</li></ul>
-                        <li> Актуальная вервия: {{ actual_version.version_title|default:"Не указана" }}</li></ul>
+                        <li> Номер актуальной вервии: {{ object.actual_version_number }}</li></ul>
+                        <li> Название актуальной версии: {{ object.actual_version_title }}</li></ul>
             </div>
             <a class="p-2 btn btn-outline-primary" href='#'>Купить</a></div>
         </div>
